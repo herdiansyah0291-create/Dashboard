@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <div class="sidebar" id="sidebar">
+        <div style="text-align: center; padding: 20px 0;">
+            <img src="alfamind.png" alt="Alfamind Logo" style="max-width: 150px; height: auto;">
+        </div>
+        <h2>Dashboard</h2>
+        <nav>
+            <a href="#" class="nav-item active" onclick="showPage('home')">Home</a>
+            <a href="#" class="nav-item" onclick="showPage('analytics')">Analytics</a>
+            <a href="#" class="nav-item" onclick="showPage('users')">Users</a>
+            <a href="#" class="nav-item" onclick="showPage('settings')">Settings</a>
+        </nav>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <h1 id="page-title">Dashboard Home</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari produk untuk forecasting..." onkeypress="handleSearch(event)">
+                <button onclick="searchProduct()">Search</button>
+            </div>
+            <div class="user-info">Admin</div>
+            <button id="chatbotToggle" class="chatbot-toggle">💬</button>
+            <input type="file" id="dataFileInput" accept=".txt" style="display: none;">
+        </header>
+        
+        <div class="content" id="content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p class="number">1,234</p>
+                </div>
+                <div class="card">
+                    <h3>Revenue</h3>
+                    <p class="number">$12,345</p>
+                </div>
+                <div class="card">
+                    <h3>Orders</h3>
+                    <p class="number">567</p>
+                </div>
+                <div class="card">
+                    <h3>Growth</h3>
+                    <p class="number">+12%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbotWidget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <h4>AI Assistant</h4>
+            <button id="chatbotClose">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <div class="message-content">
+                    👋 Halo! Saya AI Assistant Alfamind. Pilih pertanyaan di bawah atau ketik sendiri:<br><br>
+                    <strong>Pertanyaan yang dapat diajukan:</strong><br>
+                    <ul style="list-style: disc; margin-left: 20px; margin-top: 10px;">
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara mendaftar menjadi store owner?'); return false;">Bagaimana cara mendaftar menjadi store owner?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara melengkapi data diri?'); return false;">Bagaimana cara melengkapi data diri?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara melihat profil?'); return false;">Bagaimana cara melihat profil?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara melengkapi data bank?'); return false;">Bagaimana cara melengkapi data bank?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara mengganti password?'); return false;">Bagaimana cara mengganti password?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara tutup akun?'); return false;">Bagaimana cara tutup akun?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Apa itu saldo Alfamind?'); return false;">Apa itu saldo Alfamind?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara top up saldo di aplikasi?'); return false;">Bagaimana cara top up saldo di aplikasi?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara top up saldo di toko Alfamart?'); return false;">Bagaimana cara top up saldo di toko Alfamart?</a></li>
+                        <li><a href="#" class="question-link" onclick="askQuestion('Bagaimana cara cek mutasi saldo?'); return false;">Bagaimana cara cek mutasi saldo?</a></li>
+                        <li><a href="#" class="question-link" onclick="sendComplaintEmail(); return false;">📧 Kirim Ticket Komplain</a></li>
+                        <li><a href="#" class="question-link" onclick="chatWhatsAppAdmin(); return false;">💬 Chat WhatsApp Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ketik pesan Anda...">
+            <button id="chatbotSend">Kirim</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
