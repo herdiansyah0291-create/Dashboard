@@ -1,0 +1,9 @@
+# Jangan upload file yang berisi kredensial database
+db_config.php
+
+# Session files
+sessions/
+
+# Backup files
+*.bak
+*.backup
